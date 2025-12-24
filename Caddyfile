@@ -1,0 +1,17 @@
+localhost
+
+root * .
+
+file_server
+templates {
+	extensions {
+		# Uncomment this if you have the caddy-hitcounter plugin (https://github.com/mholt/caddy-hitcounter):
+		# hitCounter {
+		# 	style bright_green
+		# 	pad_digits 6
+		# }
+	}
+}
+encode zstd gzip
+
+try_files {path} {path}.html /index.html
